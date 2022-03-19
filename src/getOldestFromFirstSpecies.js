@@ -7,7 +7,7 @@ function getIdFirstSpecie(id) {
 
 function getOldestFromFirstSpecies(id) {
   // seu código aqui
-  const firstSpecie = species.find((element) => element.id === getIdFirstSpecie(id));
+  const firstSpecie = species.find((specie) => specie.id === getIdFirstSpecie(id));
   const { residents } = firstSpecie;
   const oldestFromSpecie = residents.reduce((acc, curr) => {
     if (acc.age < curr.age) return curr;
@@ -15,7 +15,5 @@ function getOldestFromFirstSpecies(id) {
   });
   return Object.values(oldestFromSpecie);
 }
-
-console.log(getOldestFromFirstSpecies('56d43ba3-a5a7-40f6-8dd7-cbb05082383f'));
 
 module.exports = getOldestFromFirstSpecies;
